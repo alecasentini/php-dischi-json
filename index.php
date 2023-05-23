@@ -26,11 +26,11 @@
         <!-- main -->
         <main class="w-100" style="height:calc(100% - 100px); background-color: #1d2d3c;">
 
-            <div class="container d-flex flex-wrap">
+            <div class="container d-flex flex-wrap justify-content-center">
                 <!-- cards -->
                 <div v-for="album in albums" :key="album.title" class="card d-flex flex-column align-items-center"
-                    style="width: calc((100% / 3) - 80px); height: 300px; margin: 40px 40px; background-color: #112030;">
-                    <img :src="album.poster" class="card-img-top w-50 p-3" :alt="album.title">
+                    style="width: calc((100% / 3) - 150px); height: 350px; margin: 30px; background-color: #112030;">
+                    <img :src="album.poster" class="card-img-top w-75 p-3" :alt="album.title">
                     <div class="card-body d-flex flex-column align-items-center text-white p-2">
                         <h5 class="card-title">{{ album.title }}</h5>
                         <p class="card-text">{{ album.author }}</p>
