@@ -4,16 +4,25 @@ createApp({
     data() {
         return {
             apiUrl: 'apis/listaAlbum.php',
-            albums: []
-
+            albums: [],
+            overlayVisible: false,
+            overlayData: {}
         }
     },
     created() {
-        console.log("init")
         axios.get(this.apiUrl)
             .then((res) => {
                 this.albums = res.data;
             });
+    },
+    methods: {
+        showOverlay(album) {
+            this.overlayData = album;
+            this.overlayVisible = true;
+        },
+        hideOverlay() {
+            this.overlayVisible = false;
+        }
     }
 
 }).mount('#app')

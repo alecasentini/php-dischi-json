@@ -28,17 +28,41 @@
 
             <div class="container d-flex flex-wrap justify-content-center">
                 <!-- cards -->
-                <div v-for="album in albums" :key="album.title" class="card d-flex flex-column align-items-center"
-                    style="width: calc((100% / 3) - 150px); height: 350px; margin: 30px; background-color: #112030;">
+                <div v-for="album in albums" 
+                    :key="album.title" 
+                    class="card d-flex flex-column align-items-center"
+                    style="width: calc((100% / 3) - 150px); height: 350px; margin: 30px; background-color: #112030; cursor:pointer"
+                    @click="showOverlay(album)"
+                >
                     <img :src="album.poster" class="card-img-top w-75 p-3" :alt="album.title">
                     <div class="card-body d-flex flex-column align-items-center text-white p-2">
-                        <h5 class="card-title">{{ album.title }}</h5>
-                        <p class="card-text">{{ album.author }}</p>
-                        <h5>{{ album.year }}</h5>
+                        <h5 class="card-title text-center">{{ album.title }}</h5>
+                        <p class="card-text text-center" style="font-size: 12px">{{ album.author }}</p>
+                        <h5 class="text-center">{{ album.year }}</h5>
                     </div>
                 </div>
             </div>
         </main>
+
+        <!-- overlay -->
+        <div id="overlay" class="align-items-center justify-content-center position-fixed rounded m-3"
+            style="background-color: rgba(17,32,48,0.9); z-index: 1; top: 0; left: 0; bottom: 0; right: 0; display: none;"
+            :style="{ display: overlayVisible ? 'flex' : 'none' }">
+            <div class="d-flex flex-column align-items-center text-white" style="width: 20%">
+                <img id="overlay-image" :src="overlayData.poster" class="card-img-top w-100 p-3" :alt="overlayData.title">
+                <h5 id="overlay-title" class="card-title text-center mb-2">{{ overlayData.title }}</h5>
+                <p id="overlay-author" class="card-text text-center" style="font-size: 12px">{{ overlayData.author }}</p>
+                <h5 id="overlay-year" class="text-center">{{ overlayData.year }}</h5>
+            </div>
+
+            <div id="close-button" class="position-absolute rounded text-center fw-bolder"
+                style="top: 20px; right: 20px; heigth: 40px; width: 40px; line-height: 40px; border: 1px solid lightgray; color:lightgray; cursor: pointer; "
+                @click="hideOverlay"
+                >
+                X
+            </div>
+        </div>
+
 
     </div>
 
