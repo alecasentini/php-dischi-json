@@ -13,13 +13,32 @@
 
 <body>
 
+    <div class="vh-100 w-100">
+
+        <!-- header -->
+        <header class="w-100" style="height: 100px; background-color: #06131f;">
+            <div class="d-flex align-items-center" style="width: 80%; height: 100%; margin: 0 auto;">
+                <img src="./assets/img/logo.png" alt="logo" style="height: 50%;">
+
+            </div>
+        </header>
+
+        <!-- main -->
+        <main class="w-100" style="height:calc(100% - 100px); background-color: #1d2d3c;">
+
+            <!-- cards -->
+
+        </main>
+
+    </div>
+
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
