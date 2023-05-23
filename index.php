@@ -13,7 +13,7 @@
 
 <body>
 
-    <div class="vh-100 w-100">
+    <div id="app" class="vh-100 w-100">
 
         <!-- header -->
         <header class="w-100" style="height: 100px; background-color: #06131f;">
@@ -27,6 +27,14 @@
         <main class="w-100" style="height:calc(100% - 100px); background-color: #1d2d3c;">
 
             <!-- cards -->
+            <div v-for="album in albums" :key="album.title" class="card" style="width: 18rem;">
+                <img :src="album.poster" class="card-img-top" :alt="album.title">
+                <div class="card-body">
+                    <h5 class="card-title">{{ album.title }}</h5>
+                    <p class="card-text">{{ album.author }}</p>
+                    <h5>{{ album.year }}</h5>
+                </div>
+            </div>
 
         </main>
 
